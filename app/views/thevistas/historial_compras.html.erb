@@ -1,0 +1,23 @@
+<div class="container mt-5">
+  <h1>Tabla de Historial de compras</h1>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Ingredientes ID</th>
+        <th>Cantidad comprada</th>
+        <th>Fecha de compra</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @json_response.each do |key, value| %>
+        <tr>
+          <td><%= key['id'] %></td>
+          <td><%= key['ingrediente_id'] %></td>
+          <td><%= key['cantidad_comprada'] %></td>
+          <td><%= key['created_at'] %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
